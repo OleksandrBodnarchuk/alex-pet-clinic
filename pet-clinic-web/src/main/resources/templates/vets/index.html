@@ -7,5 +7,24 @@
 </head>
 <body>
 	<h1 th:text="'List of Vets'">List of Vets....</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${vets.empty}">
+				<td colspan="2">No Books Available</td>
+			</tr>
+			<tr th:each="vet : ${vets}">
+				<td><span th:text="${vet.id}"> ID </span></td>
+				<td><span th:text="${vet.firstName}"> First Name </span></td>
+				<td><span th:text="${vet.lastName}"> Last Name </span></td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
