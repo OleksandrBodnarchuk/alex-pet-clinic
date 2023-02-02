@@ -3,9 +3,9 @@ package pl.alex.petclinic.service.map;
 import java.util.Set;
 
 import pl.alex.petclinic.model.Vet;
-import pl.alex.petclinic.service.CrudService;
+import pl.alex.petclinic.service.VetService;
 
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long>{
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {
@@ -29,8 +29,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements Crud
 
 	@Override
 	public void deleteById(Long id) {
-		super.deleteById(id);		
+		super.deleteById(id);
 	}
-
 
 }
