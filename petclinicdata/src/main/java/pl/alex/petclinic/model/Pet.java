@@ -2,20 +2,13 @@ package pl.alex.petclinic.model;
 
 import java.time.LocalDate;
 
-public class Pet {
+public class Pet extends BaseEntity {
+
+	private static final long serialVersionUID = 4628524401418340296L;
 	
-	private Long id;
 	private LocalDate birthDate;
 	private PetType petType;
 	private Owner owner;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public LocalDate getBirthDate() {
 		return birthDate;
