@@ -7,5 +7,24 @@
 </head>
 <body>
 	<h1 th:text="'List of Owners'">List of Owners....</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:if="${owners.empty}">
+				<td colspan="2">No Books Available</td>
+			</tr>
+			<tr th:each="owner : ${owners}">
+				<td><span th:text="${owner.id}"> ID </span></td>
+				<td><span th:text="${owner.firstName}"> First Name </span></td>
+				<td><span th:text="${owner.lastName}"> Last Name </span></td>
+			</tr>
+		</tbody>
+	</table>
 </body>
 </html>
