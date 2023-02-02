@@ -7,18 +7,16 @@ import pl.alex.petclinic.model.Owner;
 import pl.alex.petclinic.model.Vet;
 import pl.alex.petclinic.service.OwnerService;
 import pl.alex.petclinic.service.VetService;
-import pl.alex.petclinic.service.map.OwnerServiceMap;
-import pl.alex.petclinic.service.map.VetServiceMap;
 
 @Component
 public class DataLoader implements CommandLineRunner {
 
 	private final OwnerService ownerService;
 	private final VetService vetService;
-	
-	public DataLoader() {
-		this.ownerService = new OwnerServiceMap();
-		this.vetService = new VetServiceMap();
+
+	public DataLoader(OwnerService ownerService, VetService vetService) {
+		this.ownerService = ownerService;
+		this.vetService = vetService;
 	}
 
 	@Override
