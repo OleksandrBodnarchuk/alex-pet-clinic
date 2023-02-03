@@ -5,10 +5,18 @@ import java.time.LocalDate;
 public class Pet extends BaseEntity {
 
 	private static final long serialVersionUID = 4628524401418340296L;
-	
+	private String name;
 	private LocalDate birthDate;
 	private PetType petType;
 	private Owner owner;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public LocalDate getBirthDate() {
 		return birthDate;
