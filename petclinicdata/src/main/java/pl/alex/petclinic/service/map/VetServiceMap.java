@@ -4,7 +4,6 @@ import java.util.Set;
 
 import org.springframework.stereotype.Service;
 
-import pl.alex.petclinic.model.Speciality;
 import pl.alex.petclinic.model.Vet;
 import pl.alex.petclinic.service.SpecialtyService;
 import pl.alex.petclinic.service.VetService;
