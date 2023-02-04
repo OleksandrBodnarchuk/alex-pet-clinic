@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import pl.alex.petclinic.model.Owner;
 import pl.alex.petclinic.model.Pet;
 import pl.alex.petclinic.model.PetType;
-import pl.alex.petclinic.model.Speciality;
+import pl.alex.petclinic.model.Specialty;
 import pl.alex.petclinic.model.Vet;
 import pl.alex.petclinic.service.OwnerService;
 import pl.alex.petclinic.service.PetTypeService;
@@ -80,15 +80,15 @@ public class DataLoader implements CommandLineRunner {
 
 		System.out.println("Loaded Owners....");
 
-		Speciality radiology = new Speciality();
+		Specialty radiology = new Specialty();
 		radiology.setName("Radiology");
 		radiology = specialtiesService.save(radiology);
 
-		Speciality surgery = new Speciality();
+		Specialty surgery = new Specialty();
 		surgery.setName("Surgery");
 		surgery = specialtiesService.save(surgery);
 
-		Speciality dentistry = new Speciality();
+		Specialty dentistry = new Specialty();
 		dentistry.setName("Dentistry");
 		dentistry = specialtiesService.save(dentistry);
 
