@@ -14,38 +14,38 @@ import pl.alex.petclinic.service.SpecialtyService;
 @Profile("springdatajpa")
 public class SpecialtyJpaService implements SpecialtyService {
 
-	private final SpecialtyRepository SpecialtyRepository;
+	private final SpecialtyRepository specialtyRepository;
 
-	public SpecialtyJpaService(SpecialtyRepository SpecialtyRepository) {
-		this.SpecialtyRepository = SpecialtyRepository;
+	public SpecialtyJpaService(SpecialtyRepository specialtyRepository) {
+		this.specialtyRepository = specialtyRepository;
 	}
 
 	@Override
 	public Set<Specialty> findAll() {
-		Set<Specialty> Specialtys = new HashSet<>();
-		SpecialtyRepository.findAll().forEach(Specialtys::add);
-		return Specialtys;
+		Set<Specialty> specialties = new HashSet<>();
+		specialtyRepository.findAll().forEach(specialties::add);
+		return specialties;
 
 	}
 
 	@Override
 	public Specialty findById(Long id) {
-		return SpecialtyRepository.findById(id).orElse(null);
+		return specialtyRepository.findById(id).orElse(null);
 	}
 
 	@Override
 	public Specialty save(Specialty object) {
-		return SpecialtyRepository.save(object);
+		return specialtyRepository.save(object);
 	}
 
 	@Override
 	public void delete(Specialty object) {
-		SpecialtyRepository.delete(object);
+		specialtyRepository.delete(object);
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		SpecialtyRepository.deleteById(id);
+		specialtyRepository.deleteById(id);
 	}
 
 }
