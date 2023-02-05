@@ -9,9 +9,19 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "vets")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Vet extends Person {
 
 	private static final long serialVersionUID = 2216851049397048588L;
@@ -20,13 +30,5 @@ public class Vet extends Person {
 	@JoinTable(name = "vet_specialties", joinColumns = @JoinColumn(name = "vet_id"),
 			inverseJoinColumns = @JoinColumn(name = "specialty_id"))
 	private Set<Specialty> specialities = new HashSet<>();
-
-	public Set<Specialty> getSpecialities() {
-		return specialities;
-	}
-
-	public void setSpecialities(Set<Specialty> specialities) {
-		this.specialities = specialities;
-	}
 
 }
